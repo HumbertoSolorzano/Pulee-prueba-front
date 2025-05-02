@@ -1,0 +1,65 @@
+:host {
+  display: block;
+  background-color: #f5f5f5; // Gris suave
+  min-height: 50vh;
+  width: auto;
+  padding: 1rem;
+  font-family: 'Rowdies', sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: #023020;
+  border-bottom: 6px solid #00a86b;
+  padding: 1rem 0rem;
+  margin: 3rem 2rem;
+  background: linear-gradient(to right, #ffffff, transparent);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 0 2rem;
+  align-items: start; /* ✅ Alinea ambos lados al tope */
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.left,
+.top,
+.bottom {
+  background-color: rgba(255, 255, 255, 0.705);
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+app-pie-chart {
+  background-color: rgba(255, 255, 255, 0.705);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* ✅ Quitar altura fija */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+}
+
+app-pie-chart canvas {
+  width: 100% !important;
+  max-width: 360px !important; /* ✅ Más estrecho */
+  height: auto !important;
+  max-height: 320px !important; /* ✅ Controla altura */
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

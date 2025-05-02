@@ -1,0 +1,11 @@
+<ng-container *ngIf="isBrowser">
+    <canvas
+        baseChart
+        [data]="data"
+        [options]="options"
+        [type]="'doughnut'"
+        [plugins]="plugins">
+    </canvas>
+  </ng-container>
+  <ng-template #noBrowser></ng-template>
+  

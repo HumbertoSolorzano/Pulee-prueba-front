@@ -1,0 +1,35 @@
+<header class="header">
+    <!-- Logo -->
+    <a routerLink="/" class="logo">  
+      <img src="\assets\iconos\Logo_pulee_fondo.png" alt="Logo">
+    </a>
+  
+    <!-- Botón móvil -->
+    <button (click)="ToggleMenu()" class="menu-button">✨</button>
+  
+    <!-- Contenedor para menú + botones (NUEVO) -->
+    <div class="nav-and-buttons">
+      <nav [class.active]="menuOpen()">
+        <ul>
+          @for (elemento of MenuItems(); track elemento.path) {
+            <li><a [routerLink]="elemento.path">{{elemento.name}}</a></li>
+          }
+        </ul>
+      </nav>
+
+      @if (usuario(); as u) {
+        <div class="usuario-info">
+          <div class="avatar-contenedor" (click)="logout()">
+            <img [src]="avatarUrl()" alt="Avatar de usuario" class="avatar-imagen" />
+          </div>
+          <span class="usuario-name">{{ u.usuarioNombre?.split(' ')[0] || 'Usuario' }}</span>
+        </div>
+      } <!-- Si no está logueado: mostrar botones normales -->
+      @else {
+        <div class="auth-buttons">
+          <button type="submit" routerLink="/Registro" routerLinkActive="active" ariaCurrentWhenActive="page">Registrarse</button>
+          <button type="submit" routerLink="/Ingreso" routerLinkActive="active" ariaCurrentWhenActive="page">Iniciar sesión</button>
+        </div>
+      }
+    </div>
+  </header>

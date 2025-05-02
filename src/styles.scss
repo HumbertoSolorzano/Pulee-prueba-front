@@ -1,0 +1,26 @@
+/* Reset básico para eliminar márgenes no deseados */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Para que el footer se pegue abajo */
+  }
+  
+  /* Asegura que el header no tenga márgenes inesperados */
+  app-header {
+    display: block;
+    width: 100%;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa al menos toda la pantalla */
+  }
+  
+  .content-wrap {
+    flex: 1; /* Empuja el footer hacia abajo */
+  }
+  
+  app-footer {
+    margin-top: auto; /* Asegura que el footer siempre abajo */
+  }

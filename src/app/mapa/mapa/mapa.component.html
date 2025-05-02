@@ -1,0 +1,23 @@
+<div class="contenedor-principal">
+    <div class="lista-lugares">
+      <!-- <input type="range" name="zoom" min="0" max="20" [(ngModel)]="zoom" class="slider-zoom" /> -->
+      
+      <div class="scroll-lugares">
+        @for(location of $locations(); track location) {
+          <div class="item-lugar">
+            <div class="detalle-lugar">
+              <dt class="nombre-lugar">{{ location.name }}</dt>
+              <dd class="descripcion-lugar">{{ location.description }}</dd>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  
+    <div class="mapa">
+      <div class="mapa-contenedor">
+        <!-- Aquí va tu mapa -->
+      </div>
+    </div>
+  </div>
+  

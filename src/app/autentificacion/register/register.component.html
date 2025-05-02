@@ -1,0 +1,65 @@
+<div class="login-container">
+    <div class="form-section">
+        <form [formGroup]="formRegistro" (ngSubmit)="onSubmit()" class="login-form">
+
+            <!-- Nombre y Apellido en la misma fila -->
+            <div class="Names-field">
+                <input 
+                  type="text"
+                  placeholder="Nombre"
+                  formControlName="nombres"
+                  required
+                  style="flex:1;">
+
+                <input 
+                  type="text"
+                  placeholder="Apellido"
+                  formControlName="apellidos"
+                  required
+                  style="flex:1;">
+            </div>
+          
+            <!-- Correo electrónico -->
+            <input 
+                type="email"
+                placeholder="Correo electrónico"
+                formControlName="email"
+                required>
+          
+            <!-- Contraseña -->
+            <div class="password-field">
+                <input 
+                type="password"
+                placeholder="Contraseña"
+                formControlName="password"
+                required>
+            </div>
+          
+            <!-- Confirmar contraseña -->
+            <div class="password-field">
+                <input 
+                type="password"
+                placeholder="Confirmar contraseña"
+                formControlName="confirmarPassword"
+                required>
+            </div>
+          
+            <!-- Nombre de usuario -->
+            <input 
+            type="text"
+            placeholder="Nombre de usuario"
+            formControlName="usuarioNombre"
+            required>
+          
+            <!-- Botones -->
+            <div class="buttons">
+              <button type="submit" class="login-btn">Registrarse</button>
+              <button type="button" class="signup-btn" routerLink="/Ingreso" routerLinkActive="active" ariaCurrentWhenActive="page">Ya tengo cuenta</button>
+            </div>
+          </form>          
+    </div>
+    <div class="welcome-section">
+        <h1>Tus datos seran mios!</h1>
+        <p>Crea tu cuenta, para proteger los espacios publicos🌻</p>
+    </div>
+</div>

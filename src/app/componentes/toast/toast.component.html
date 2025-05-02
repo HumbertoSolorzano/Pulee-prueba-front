@@ -1,0 +1,12 @@
+<div class="toast-container">
+  <div *ngFor="let toast of toasts" [@fadeInOut] class="toast" [ngClass]="toast.type">
+    <div class="icon">
+      <img [src]="toast.icon" alt="{{ toast.type }} icon">
+    </div>
+    <div class="message">
+      {{ toast.message }}
+    </div>
+    <button class="close-btn" (click)="removeToast(toast.id)">×</button>
+    <div class="progress" [style.animationDuration]="toast.duration + 'ms'"></div>
+  </div>
+</div>

@@ -1,0 +1,283 @@
+.header {
+  background-color: #023020; // Verde oscuro Pulee
+  color: #e0ebe8;            // Plateado suave
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(2, 48, 32, 0.3);
+  border-bottom: 2px solid #00a86b; // Borde jade
+  position: relative;
+  z-index: 1000;
+
+  /* -------------------------------------------
+     Logo del header (imagen + texto)
+     ------------------------------------------- */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.8rem;
+    color: #e0ebe8;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    img {
+      position: relative;
+      top: -5px; // Ajusta la altura del logo
+      height: 100%;
+      max-height: 90px;
+      width: auto;
+      object-fit: contain;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      color: #a7c4bc; // Gondareva celeste
+      transform: scale(1.05);
+    }
+  }
+
+  /* -------------------------------------------
+     Botón hamburguesa del menú (oculto en desktop)
+     ------------------------------------------- */
+  .menu-button {
+    background: #50c878; // Esmeralda
+    border: none;
+    border-radius: 50%;
+    width: 30rem;
+    height: 3rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #007c5a; // Esmeralda oscura
+      transform: rotate(90deg);
+    }
+  }
+
+  /* -------------------------------------------
+     Navegación principal del header
+     ------------------------------------------- */
+  nav {
+    ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        a {
+          color: #e0ebe8;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 1.3rem;
+          font-family: 'Rowdies';
+          padding: 0.5rem 1rem;
+          border-radius: 2rem;
+          transition: all 0.3s ease;
+          position: relative;
+
+          &:hover {
+            background: rgba(167, 196, 188, 0.2); // Fondo celeste con opacidad
+            color: #a7c4bc;
+          }
+
+          &.active-link {
+            color: #50c878; // Esmeralda
+            font-weight: 700;
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: -0.5rem;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 60%;
+              height: 3px;
+              background: #50c878;
+              border-radius: 3px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* -------------------------------------------
+     Sección de usuario logueado (avatar + nombre)
+     ------------------------------------------- */
+  .usuario-info {
+    display: flex;
+    align-items: center;
+    gap: 0; // Sin separación, los elementos se tocan
+  }
+
+  // Contenedor de la imagen (solo para bordes y efecto)
+  .avatar-contenedor {
+    background: transparent;
+    border-radius: 50%;
+    padding: 2px;
+    margin-right: -5px; // Une visualmente el texto al borde del avatar
+    z-index: 2;
+  }
+
+  // Imagen del avatar
+  .avatar-imagen {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid #6FA17D; // Borde verde suave
+    background-color: rgba(255, 255, 255, 0.4); // Efecto translúcido
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 8px rgba(111, 161, 125, 0.6);
+      cursor: pointer;
+    }
+  }
+
+  // Texto del nombre de usuario
+  .usuario-name {
+    border: 2px solid #6FA17D;
+    padding: 0.2rem 1rem;
+    margin-left: -0.5rem; // Ajusta la posición con respecto al margen derecho
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    font-family: 'Rowdies';
+    font-weight: 600;
+    font-size: 1rem;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    color: #e0ebe8; // Plateado
+    background: #023020; // Fondo igual que el header
+    transition: all 0.3s ease;
+  }
+
+  // Efecto al hacer hover sobre la imagen que afecta al texto
+  .avatar-contenedor:hover ~ .usuario-name{
+    background: rgba(167, 196, 188, 0.2); // Celeste con opacidad
+    color: #a7c4bc;
+    border-color: #023020;
+    transition: color 0.25s ease-in, border-color 0.25s ease-in,background 0.25s ease-in;
+  }  
+
+    /* -------------------------------------------
+     Contenedor para el menú + botones
+     ------------------------------------------- */
+  .nav-and-buttons {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  /* -------------------------------------------
+     Botones de autenticación
+     ------------------------------------------- */
+  .auth-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  button[type="submit"] {
+    background: #50c878;
+    color: #023020;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    font-family: 'Rowdies';
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background: #00a86b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    &:last-child {
+      background: transparent;
+      color: #e0ebe8;
+      border: 2px solid #50c878;
+
+      &:hover {
+        background: rgba(80, 200, 120, 0.2);
+      }
+    }
+  }
+
+  /* ===========================================
+     Responsive Design para móviles (<=768px)
+     =========================================== */
+  @media (max-width: 768px) {
+    padding: 1rem;
+
+    .menu-button {
+      display: flex;
+    }
+
+    .nav-and-buttons {
+      gap: 0;
+      width: 100%;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      height: 100vh;
+      background: #556b2f; // Pantano
+      transition: right 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      padding: 5rem 2rem;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+
+      &.active {
+        right: 0;
+      }
+
+      ul {
+        flex-direction: column;
+        gap: 1.5rem;
+
+        li {
+          a {
+            padding: 0.8rem;
+            display: block;
+            border-radius: 0.5rem;
+
+            &:hover {
+              background: #007c5a;
+            }
+          }
+        }
+      }
+    }
+
+    .auth-buttons {
+      display: none;
+
+      nav.active + & {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 2rem;
+        margin-top: auto;
+      }
+    }
+  }
+}

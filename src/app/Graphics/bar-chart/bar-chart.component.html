@@ -1,0 +1,12 @@
+<div *ngIf="isBrowser">
+    <h2 style="font-family: 'Rowdies'; color: #007a4d;">Resumen de Estado</h2>
+    <p style="font-family: 'Cascadia Code'; color: #333;">
+      Total proyectado en S1-2025: <strong>{{ total }}</strong>
+    </p>
+    <canvas baseChart
+      [data]="data"
+      [type]="'bar'"
+      [options]="options">
+    </canvas>
+  </div>
+  

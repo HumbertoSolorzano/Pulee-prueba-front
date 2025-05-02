@@ -1,0 +1,250 @@
+/* ==================================================
+   ⚙️  LAYOUT GENERAL DEL FOOTER
+================================================== */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #023020;
+  color: #e0ebe8;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 -4px 12px rgba(2, 48, 32, 0.3);
+  font-family: 'Cascadia Code', sans-serif;
+  gap: 2rem;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+/* ==================================================
+   📄 FORMULARIO DE ENCUESTA
+================================================== */
+.survey-section {
+  flex: 3; /* Ocupa 2/5 del footer */
+  padding-right: 2rem;
+  border-right: 2px solid #50c878;
+}
+
+.survey-form {
+  flex: 1;
+  background-color: #01160e;
+  padding: 0.4rem 0rem 2rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  min-width: 250px;
+}
+
+/* === Inputs generales del formulario === */
+.input-group {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  max-width: 90%;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.styled-input,
+.styled-textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid rgba(80, 200, 120, 0.3);
+  border-radius: 8px;
+  background: rgba(2, 48, 32, 0.7);
+  color: #e0ebe8;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.styled-input:focus,
+.styled-textarea:focus {
+  border-color: #50c878;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(80, 200, 120, 0.2);
+}
+
+.styled-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* === Botón de enviar === */
+.submit-button {
+  background: #50c878;
+  color: #023020;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  max-width: 100%;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.submit-button:hover {
+  background: #3aa96d;
+  transform: translateY(-2px);
+}
+
+/* ==================================================
+   😃 EMOJIS DE SATISFACCIÓN
+================================================== */
+.emoji-rating {
+  display: flex;
+  margin-left: - 1vw;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.emoji-rating img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* Hover general */
+.emoji-rating img:hover {
+  transform: scale(1.2);
+}
+
+/* Emoji seleccionado */
+.emoji-rating img.seleccionado {
+  transform: scale(1.25);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+
+/* Emojis no seleccionados */
+.emoji-rating img.no-seleccionado {
+  opacity: 0.4;
+  transform: scale(1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* ==================================================
+   📋 LISTA DESPLEGABLE DE ESTADOS
+================================================== */
+.status-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: #012d1d;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: 'Cascadia Code', sans-serif;
+}
+
+.status-toggle {
+  display: none;
+}
+
+.status-label {
+  display: block;
+  padding: 1rem 1.2rem;
+  background: #023020;
+  color: #e0ebe8;
+  font-size: 1.1rem;
+  cursor: pointer;
+  position: relative;
+  border-bottom: 2px solid #00a86b;
+}
+
+.status-label::after {
+  content: "+";
+  position: absolute;
+  right: 1rem;
+  font-size: 1.2rem;
+  color: #50c878;
+  transition: transform 0.3s ease;
+}
+
+.status-toggle:checked + .status-label::after {
+  transform: rotate(45deg);
+}
+
+.status-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.4s ease;
+  text-align: center;
+  background: #014027;
+}
+
+.status-toggle:checked ~ .status-list {
+  height: 150px;
+}
+
+.status-list li {
+  padding: 15px;
+  color: #e0ebe8;
+  border-bottom: 1px solid #00a86b;
+  transition: background 0.3s ease;
+}
+
+.status-list li:hover {
+  background-color: #036c44;
+  cursor: pointer;
+}
+
+/* ==================================================
+   👥 SECCIÓN "ACERCA DE NOSOTROS" Y "CONTACTO"
+================================================== */
+.grid-container {
+  flex: 4; /* Ocupa 3/5 del footer */
+  display: grid;
+  grid-template-columns: 4.5fr 11fr;
+  gap: 1rem;
+  max-width: 1200px;
+  padding-top: 2rem;
+}
+
+.info-section,
+.image-section {
+  color: #e0ebe8;
+}
+
+.info-section h3 {
+  color: #50c878;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #00a86b;
+  display: inline-block;
+}
+
+.info-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-section li {
+  margin-bottom: 0.5rem;
+}
+
+.info-section a {
+  color: #50c878;
+  text-decoration: underline;
+}
+
+/* Imagen ilustrativa */
+.image-section img {
+  margin-top: 5rem;
+  margin-left: 0.5rem;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}

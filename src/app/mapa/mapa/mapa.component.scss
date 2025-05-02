@@ -1,0 +1,61 @@
+.contenedor-principal {
+    display: flex;
+    gap: 1rem;
+    height: 40rem;
+  }
+  
+  .lista-lugares {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .scroll-lugares {
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 1rem;
+    border-right: 2px solid #C8D5B9; /* Verde claro Pulee */
+  }
+  
+  .item-lugar {
+    max-width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #E6ECE4; /* Gris verde clarito */
+  }
+  
+  .detalle-lugar {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nombre-lugar {
+    color: #4A6350; /* Verde oscuro Pulee */
+    font-size: 1.125rem; /* 18px */
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif; /* Fuente de Pulee */
+  }
+  
+  .descripcion-lugar {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #6B7B68; /* Gris verdoso suave */
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .mapa {
+    width: 80%;
+    height: 100%;
+  }
+  
+  .mapa-contenedor {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Slider opcional si lo activas */
+  .slider-zoom {
+    width: 100%;
+  }
+  

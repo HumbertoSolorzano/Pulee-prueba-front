@@ -1,0 +1,102 @@
+<div class="footer-container">
+  <div class="survey-section">
+    <h3>¡Encuéstanos!</h3>
+    <form class="survey-form" (ngSubmit)="onSubmit()" #encuestaForm="ngForm">
+    <!-- Input Correo -->
+    <div class="input-group">
+      <label for="email">Correo:</label>
+      <input
+        type="email"
+        id="email"
+        name="correo"
+        [(ngModel)]="nuevaEncuesta.correo"
+        placeholder="tucorreo@ejemplo.com"
+        class="styled-input"
+        required
+      >
+    </div>
+
+    <!-- Motivo -->
+    <div class="input-group">
+      <label>Motivo:</label>
+      <div class="status-container">
+        <input 
+          type="checkbox" 
+          id="toggle-status" 
+          class="status-toggle"
+          #statusToggle>
+        <label for="toggle-status" class="status-label">
+          {{ motivoSeleccionado || 'Seleccionar motivo' }}
+        </label>
+        <ul class="status-list">
+          <li *ngFor="let motivo of motivos" (click)="seleccionarMotivo(motivo)">
+            {{ motivo }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Valoración con Emojis -->
+    <div class="emoji-rating">
+      <a (click)="seleccionarNivel(3)">
+        <img src="assets/imagenes/Encuesta/icons8-happy-96.png" alt="feliz"
+             [ngClass]="{'seleccionado': emojiSeleccionado === 3, 'no-seleccionado': emojiSeleccionado && emojiSeleccionado !== 3}">
+      </a>
+      <a (click)="seleccionarNivel(2)">
+        <img src="assets/imagenes/Encuesta/icons8-neutral-96.png" alt="neutral"
+             [ngClass]="{'seleccionado': emojiSeleccionado === 2, 'no-seleccionado': emojiSeleccionado && emojiSeleccionado !== 2}">
+      </a>
+      <a (click)="seleccionarNivel(1)">
+        <img src="assets/imagenes/Encuesta/icons8-triste-96.png" alt="triste"
+             [ngClass]="{'seleccionado': emojiSeleccionado === 1, 'no-seleccionado': emojiSeleccionado && emojiSeleccionado !== 1}">
+      </a>
+    </div>
+    
+
+       <!-- Comentario -->
+    <div class="input-group">
+      <label for="reason">¿Por qué?</label>
+      <textarea
+        id="reason"
+        name="comentario"
+        class="styled-textarea"
+        [(ngModel)]="nuevaEncuesta.comentarios"
+        required
+      ></textarea>
+    </div>
+
+    <!-- Enviar -->
+    <div class="input-group">
+      <button type="submit" class="submit-button">Enviar</button>
+    </div>
+      
+    </form>
+  </div>
+
+  <div class="grid-container">
+    <!-- Sección Izquierda Arriba: Acerca de Nosotros -->
+    <div class="info-section">
+      <h3>Acerca de Nosotros</h3>
+      <ul>
+        <li><a href="/docs/indicadores-kpi.pdf" target="_blank">KPI y tiempos de respuesta</a></li>
+        <li>Teléfono: +57 312 456 7890</li>
+        <li>Correo: contacto&#64;pulee.co</li>
+        <li>Equipo:</li>
+        <li>Humberto Solorzano</li>
+        <li>Luario Aguillon</li>
+        <li>Aisai Bernal</li>
+        
+      </ul>
+        <h3>Contáctanos</h3>
+        <ul>
+          <li>Teléfono: +57 312 456 7890</li>
+          <li>Correo: puleepi1&#64;gmail.com</li>
+        </ul>
+    </div>
+  
+    <!-- Sección Derecha Arriba: Imagen 1 -->
+    <div class="image-section">
+      <img src="assets/imagenes/Acerca_nosotros/greencity1.jpg" alt="Imagen 1" />
+    </div>
+  </div>
+</div>

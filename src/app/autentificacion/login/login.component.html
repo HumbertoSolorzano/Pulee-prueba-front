@@ -1,0 +1,80 @@
+<div class="login-container">
+  <div class="welcome-section">
+    <h1>¡Hola, bienvenido!</h1>
+    <p>La historia es parte de nosotros, por eso cuidemosla</p>
+  </div>
+  
+  <div class="form-section">
+    <form [formGroup]="loginForm" class="login-form" (ngSubmit)="onSubmit()">
+      <!-- Email -->
+      <input 
+        type="email" 
+        formControlName="email"
+        placeholder="Correo electrónico"
+        [class.invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+      
+      <!-- Password con toggle -->
+      <div class="password-field">
+        <input 
+          [type]="passwordVisible ? 'text' : 'password'" 
+          formControlName="password"
+          placeholder="Contraseña"
+          [class.invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        
+        <button 
+          type="button" 
+          class="toggle-password" 
+          (click)="togglePassword()"
+          [attr.aria-label]="passwordVisible ? 'Ocultar contraseña' : 'Mostrar contraseña'">
+          <img 
+            [src]="passwordVisible ? 
+              'assets/imagenes/sesiones/icons8-lock-96.png' : 
+              'assets/imagenes/sesiones/icons8-show-password-96.png'" 
+            alt="Visibilidad de contraseña">
+        </button>
+      </div>
+  
+      <!-- Opciones -->
+      <div class="options">
+        <label class="checkbox-container">
+          <input type="checkbox" formControlName="rememberMe">
+          <span>Recuérdame</span>
+        </label>
+        <a routerLink="/recuperar-contrasena">¿Olvidaste tu contraseña?</a>
+      </div>
+  
+      <!-- Botones -->
+      <div class="buttons">
+        <button 
+          type="submit" 
+          class="login-btn" 
+          [disabled]="loginForm.invalid">
+          Ingresar
+        </button>
+
+        <button 
+          type="button" 
+          class="signup-btn" 
+          routerLink="/Registro" 
+          routerLinkActive="active">
+          Crear cuenta
+        </button>
+      </div>
+  
+      <!-- Redes sociales -->
+      <div class="socials">
+        <span>Síguenos en:</span>
+        <a href="#" aria-label="Facebook">
+          <img src="assets/imagenes/sesiones/icons8-facebook-120.png" alt="Facebook">
+        </a>
+        <a href="#" aria-label="Instagram">
+          <img src="assets/imagenes/sesiones/icons8-instagram-120.png" alt="Instagram">
+        </a>
+        <a href="#" aria-label="X">
+          <img src="assets/imagenes/sesiones/icons8-x-120.png" alt="X">
+        </a>
+      </div>
+    </form>
+  </div>
+
+</div>

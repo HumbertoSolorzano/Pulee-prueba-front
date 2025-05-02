@@ -1,0 +1,10 @@
+<!-- scatter-chart.component.html -->
+<div *ngIf="isBrowser">
+    <canvas
+      baseChart
+      [data]="data"
+      [type]="'line'"
+      [options]="options">
+    </canvas>
+  </div>
+  
